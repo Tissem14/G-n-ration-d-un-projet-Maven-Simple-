@@ -13,19 +13,37 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <junit.version>3.8.1</junit.version> <!-- Propriété ajoutée -->
+    <junit.version>3.8.1</junit.version> <!-- Propriété ajoutée pour la version de JUnit -->
   </properties>
+
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit.version}</version> <!-- Utilisation de la propriété -->
-      <scope>test</scope>
+      <version>${junit.version}</version> <!-- Utilisation de la propriété pour JUnit -->
+      <scope>test</scope> <!-- Dépendance uniquement pour les tests -->
+    </dependency>
+    <dependency>
+      <groupId>com.github.lalyos</groupId>
+      <artifactId>jfiglet</artifactId>
+      <version>0.0.4</version> <!-- Utilisation de la version 0.0.8 de jfiglet -->
     </dependency>
   </dependencies>
 
   <build>
-    <finalName>${project.artifactId}</finalName> <!-- Nom du livrable -->
+    <finalName>${project.artifactId}</finalName> <!-- Nom du livrable basé sur l'artefactId -->
   </build>
 </project>
